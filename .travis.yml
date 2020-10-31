@@ -2,6 +2,7 @@ os: linux
 language: python
 
 script:
+  - pip install nose
   - pip install -r requirements.txt
   - nosetests blobs
 

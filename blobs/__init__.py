@@ -65,15 +65,15 @@ def find_blobs(img,
     img : 2x ndarray
         Image in HxW order
     bg : int, optional
-        Background pixel value
+        Background threshold.  pixel value.
     min_size : float, optional
-        Minimum feature size in total pixels
+        Minimum feature size in number of pixels.
     limit : int, optional
-        Consider only N largest features
+        Consider only N largest features.
     smear : float, optional
-        Radius of gaussian smear prior to feature detection.
+        Radius (in pixels) of gaussian smear prior to feature detection.
     refine : bool, optional
-        If true, try to refine blobs with 2d gaussian fit
+        If true, try to refine each blob with a 2d gaussian fit.
 
     Examples
     --------

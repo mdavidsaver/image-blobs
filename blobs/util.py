@@ -21,7 +21,7 @@ def gauss2d(F, Xs, Ys):
     return O + A * np.exp((-(Xs-X)**2)/(2*W**2)) * np.exp((-(Ys-Y)**2)/(2*H**2))
 
 def make_image(shape, Fs, dtype=None):
-    '''
+    '''Generate a test image with the given shape and guassian blobs.
     '''
     Fs = np.asarray(Fs, dtype=features)
     img = np.zeros(shape, dtype='f8')
@@ -44,12 +44,16 @@ def guess_background(img):
     return np.asarray(np.median(img.flatten())*4.0, dtype=img.dtype)
 
 def showimg(img, title=''):
+    '''Shorthand for matplotlib.pyplot.imshow()
+    '''
     import matplotlib.pyplot as plt
     plt.imshow(img)
     plt.title(title)
     plt.show()
 
 def show_features(img, Fs, title='', sigma=1.0):
+    '''Show image superimposed with blob position and size
+    '''
     import matplotlib.pyplot as plt
     plt.imshow(img)
     plt.errorbar(Fs['X'], Fs['Y'], xerr=Fs['W']*0.5*sigma, yerr=Fs['H']*0.5*sigma, fmt='b+')
