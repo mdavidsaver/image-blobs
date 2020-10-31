@@ -5,6 +5,10 @@ from scipy.optimize import least_squares
 
 from . import util
 
+__all__ = (
+    'find_blobs',
+)
+
 def _error(F, Xs, Ys, I):
     return (util.gauss2d(F,Xs,Ys)-I).flatten()
 
@@ -120,7 +124,7 @@ def find_blobs(img,
 
     # discard small features
     if min_size is not None:
-        sums = [(F,C) for F,C in sums if C>=limit]
+        sums = [(F,C) for F,C in sums if C>=min_size]
     if limit is not None:
         sums = sums[:limit]
 

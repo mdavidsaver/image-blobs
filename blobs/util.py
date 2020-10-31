@@ -1,6 +1,12 @@
 
 import numpy as np
 
+__all__ = (
+    'features',
+    'make_image',
+    'show_features',
+)
+
 # scipy imread() returns images as HxW or HxWx3
 # we maintain this coordinate system with Y and H referring to the outer-most dimension
 
