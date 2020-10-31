@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 from numpy.testing import assert_array_almost_equal
 
-from ..util import features, make_image
+from ..util import make_image
 from .. import find_blobs
 
 def gauss1(dtype=None):
