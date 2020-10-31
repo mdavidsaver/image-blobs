@@ -68,16 +68,3 @@ class TestFind(unittest.TestCase):
         assert_array_almost_equal(B['W'], [  4.,   4.,   4.,   5.], decimal=1)
         assert_array_almost_equal(B['H'], [  4.,   4.,   4.,   3.], decimal=1)
         assert_array_almost_equal(B['A'], [204., 153., 128., 255.], decimal=0)
-
-    def test_four_noise(self):
-        img = gauss4('u1')
-        img += (np.abs(np.random.randn(*img.shape))*5).astype('u1')
-        B = find_blobs(img)
-        B.sort(order='idx')
-
-        assert_array_almost_equal(B['X'], [160.,  40., 100., 150.], decimal=0)
-        assert_array_almost_equal(B['Y'], [ 25.,  25.,  50.,  50.], decimal=0)
-        assert_array_almost_equal(B['W'], [  4.,   4.,   4.,   5.], decimal=0)
-        assert_array_almost_equal(B['H'], [  4.,   4.,   4.,   3.], decimal=0)
-        # too noisy
-        #assert_array_almost_equal(B['A'], [204., 153., 128., 255.], decimal=10)
