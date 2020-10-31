@@ -29,3 +29,21 @@ show_features(img, features, sigma=3)
 ```
 
 ![Demo output](https://raw.githubusercontent.com/mdavidsaver/blobs/master/blobsdemo.png)
+
+Details
+-------
+
+Result X/Y and W/H are given as coordinates as an image is typically rendered.
+eg. A 200x100 image has 200 pixels in X.
+Scipy stores images with the order of dimensions reversed.
+eg. 200x100 becomes `shape=(100, 200)`.
+
+The `find_blobs()` function works by first identifying
+contiguous blobs of pixels with `scipy.ndimage.label()`.
+This step works best when each blob is well isolated
+from the background.
+
+Then, a bounded fit to a 2d gaussian is made individually
+for each blob using `scipy.optimize.least_squares()`.
+This fit is performed against the sub-image bounding each feature.
+So small features can be fit relatively quickly.
