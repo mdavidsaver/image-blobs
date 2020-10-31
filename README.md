@@ -1,15 +1,16 @@
 BLOBs
 =====
 
-[Home](https://github.com/mdavidsaver/blobs)
+[Home](https://github.com/mdavidsaver/image-blobs)
+[PYPI](https://pypi.org/project/image-blobs/)
 
 Analysis of gray scale images containing gaussian shaped blobs.
 Blobs should not overlap in 2d, but may overlap in projection.
 Entry point is `blobs.find_blobs()`.
 
 ```py
-from blobs import find_blobs
-from blobs.util import make_image, show_features
+from image_blobs import find_blobs
+from image_blobs.util import make_image, show_features
 shape = (100, 200) # 200x100
 Fs = [
     #  X   Y  W  H  A    IDX (ignored as input, unique in output)
@@ -27,4 +28,4 @@ print(features)
 show_features(img, features, sigma=3)
 ```
 
-![Demo output](blobsdemo.png)
+![Demo output](https://raw.githubusercontent.com/mdavidsaver/blobs/master/blobsdemo.png)

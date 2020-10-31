@@ -2,13 +2,13 @@
 
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r') as F:
     long_description = F.read()
 
 setup(
-    name='blobs',
+    name='image-blobs',
     version='0.0.0',
     description="Analysis for gray scale images containing gaussian blobs",
     long_description=long_description,
@@ -19,10 +19,7 @@ setup(
     url='https://github.com/mdavidsaver/blobs',
     python_requires='>=2.7',
 
-    packages=[
-        'blobs',
-        'blobs.test',
-    ],
+    packages=find_packages(),
     install_requires = [
         'scipy',
     ],
