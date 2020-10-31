@@ -9,8 +9,8 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r') as F:
 
 setup(
     name='image-blobs',
-    version='0.0.0',
-    description="Analysis for gray scale images containing gaussian blobs",
+    version='0.1.0',
+    description="Analysis for gray scale images containing gaussian shaped blobs",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='GPL-3+',
